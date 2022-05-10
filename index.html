@@ -1,0 +1,583 @@
+<script>
+    //Este es un comentario 
+    /* Secuencias de Escape 
+    Código  resultado
+    \'  comilla simple
+    \"  comilla doble
+    \\  barra invertida
+    \n  línea nueva
+    \r  retorno de posición
+    \t  tabulación
+    \b  retroceso
+    \f  salto de página
+    ...
+    */
+//variables-------------------------------------------
+    var miNombre = "Danitza alias \"Dani\"";
+    console.log("Hello", miNombre);
+    var miNombre = 'Maricielo alias \n"Mari"';
+    var saludo = "Hola"
+    var mensaje = saludo + " " + miNombre
+    console.log(mensaje);
+
+    var producto = 5 * 4;    //20
+    producto++;              //21
+    producto += 4;           //25 
+    console.log("Un numero:", producto);
+
+//cadenas-------------------------------------------------
+    var miCadena;
+    miCadena ="ABCD";
+    console.log(miCadena);
+    console.log("El tamano es:", miCadena.length);
+    console.log("Mi primer caracter es:", miCadena[0]);
+    console.log("Mi ultimo caracter es:", miCadena[miCadena.length - 1]);
+    //Las cadenas son inmutables (no se les puede cambiar solo un caracter)
+
+    /* Concatena las cadenas y crea una nueva cadena que muestre un mensaje. 
+    Puedes cambiar los valores de las variables.
+    Por ejemplo: El perro negro corrió rápidamente a la tienda.
+                La bicicleta pequeña voló a tienda lentamente.
+    */
+    var miSustantivo = "perro";
+    var miAdjetivo = "negro";
+    var miVerbo = "corrió";
+    var miAdverbio = "rápidamente";
+  
+    var mensaje = "El " + miSustantivo + " " + miAdjetivo + " " + miVerbo  + " " + miAdverbio + " a la tienda.";
+    console.log(mensaje);
+
+    var miSustantivo = "bicibleta";
+    var miAdjetivo = "pequeña";
+    var miVerbo = "voló";
+    var miAdverbio = "lentamente";
+
+    var mensaje = "La " + miSustantivo + " " + miAdjetivo + " " + miVerbo + " a la tienda " + "lentamente.";
+    console.log(mensaje);
+
+//arreglos--------------------------------------------
+    var alumnos = [["Rodrigo", 36], ["Dani", 21], ["Gretel", 70]]
+    console.log(alumnos);
+    console.log("primer alumno en la lista", alumnos[0]);
+
+    var miArreglo = [[1,2,3], [4,5,6], [7,8,9]];
+    console.log(miArreglo[2][0]);
+	//ultimo en la lista-----------------------------------
+    var estaciones = ["Invierno", "Otoño", "Primavera"];
+    estaciones.push("Verano");
+    console.log(estaciones);
+
+    estacion=estaciones.pop();
+    console.log(estaciones);
+    console.log("se borro: ",estacion);
+	//primero en la lista------------------------------------
+    estacion=estaciones.shift();
+    console.log(estaciones);
+    console.log("se borro: ",estacion);
+
+    estaciones.unshift(estacion);
+    console.log("agregando Invierno", estaciones)
+
+//funciones----------------------------------------------
+    function mostrarMensaje() {
+        console.log("Esta es una funcion");
+    }
+    mostrarMensaje();
+
+    var a = 10;
+    var b;
+    function myFunction(a, b){
+        var a = 20;
+        console.log("a: ", a, "b: ",b);
+    }
+    myFunction( 0, 5);
+    console.log("a: ", a, "b: ",b);
+    //alert("Value of 'a' outside the function " + a);
+
+    function crearCadena(lenguajeDeProgramacion) {
+        return "Mi meta es aprender " + lenguajeDeProgramacion;
+    }
+    var miMeta = crearCadena("JavaScript");
+    console.log(miMeta);
+	//ejercicio
+    function proximoEnLaFila(arreglo, elemento) {
+        var salida = arreglo.shift();
+        arreglo.push(elemento);
+        return salida;
+    }
+    arr=["cielo", "mar", "tierra", "sol"];
+    console.log("arreglo: ", arr);
+    console.log(proximoEnLaFila(arr, "estrella"));
+    console.log("erreglo: " + arr);
+    console.log(proximoEnLaFila(arr, "flores"));
+    console.log("arreglo: " + JSON.stringify(arr));
+
+//igualdad  ----   en negativo != ----------------------------
+    console.log("Igualdad:");
+    console.log(9 == 9);  //true
+    console.log(9 == "9");  //true
+
+//igualdad estricta  --  en negativo !== ------------------
+    console.log(9 === 9);  //true
+    console.log(9 === "9");  //false
+
+//comparacion
+    console.log("Comparación:");
+    console.log("A">"B")  //false
+    console.log("AB">"B");  //false
+
+// AND  X && Y
+// OR   X || Y
+	var w;
+	var z = w || [1,2,3];
+	console.log(w);  //undefined
+	console.log(z);  //[1,2,3]
+
+// NOT  !
+    console.log("negación:");
+    console.log(!true);
+    console.log(!false);
+
+//if
+    if (true) {
+        console.log("condicion verdadera!");
+    } else {
+        console.log("condicion es falsa!")
+    }
+
+//else if
+    function clasificarValor(valor) {
+        if (valor % 2 == 0) {
+            console.log("Divisible entre 2.");
+        } else if (valor % 3 == 0) {
+            console.log("Divisible entre 3.");
+        } else {
+            console.log("No es divisible entre las opciones.");
+        }
+    }
+    clasificarValor(6);
+
+//objetos
+    var miPerro = {
+        "nombre": "Dinky",
+        "edad": 5,
+        "raza": "salchicha"
+    } 
+    var tuPerro = {
+        nombre: "Firulais",
+        edad: 3,
+        raza: "poodle"
+    } 
+    console.log(tuPerro.nombre);
+    console.log(tuPerro["raza"]);
+
+    var mochila ={
+        "color": "azul",
+        "tamanio": "mediano",
+        "contenido": ["botella", "cuaderno"]
+    }
+    console.log(mochila.color);
+    mochila.color = "verde"
+    console.log(mochila.color);
+    console.log(mochila);
+    //viendo el contenido de la lista dentro del objeto
+    console.log(mochila.contenido[0]);
+    //agregando a la lista dentro del objeto
+    mochila.contenido.push("lapiz");
+    console.log(mochila.contenido);
+    //agregando una propiedad
+    mochila.modelo = "militar";
+    console.log(mochila);
+    //borrando propiedad
+    delete mochila.tamanio;
+    console.log(mochila);
+    //preguntar si se tiene la propiedad
+    console.log(mochila.hasOwnProperty("color")); //true
+    console.log(mochila.hasOwnProperty("tamanio")); //false
+
+//objetos complejos
+	var ordenesDePizzas = [
+        {
+            "tipo": "margarita",
+            "precio": 25,
+            "topping": ["queso","aceituna"],
+            "paraMesa": true
+        },
+        {
+            "tipo": "margarita",
+            "precio": 25,
+            "topping": [],
+            "paraMesa": false
+        }
+    ]
+    console.log(ordenesDePizzas[0].topping[1]); //aceituna
+
+//objetos anidados
+	var miReceta = {
+		"descripcion": "postre",
+		"ingredientes": {
+			"masa": {
+				"harina": "100 gr",
+				"sal": "1 cuadrarita",
+				"agua": "1 taza"
+			},
+			"cobertura": {
+				"azucar": "120 grs",
+				"chocolate": "4 cuchara",
+				"mantequilla": "200 grs"
+			}
+		}
+	}
+	console.log(miReceta.ingredientes.cobertura.mantequilla) //200 grs
+	console.log(miReceta.ingredientes.cobertura["mantequilla"]) //200 grs
+	console.log(miReceta["ingredientes"].cobertura["mantequilla"]) //200 grs
+
+//arreglos anidados
+	var misPlantas = [
+		{	
+			tipo: "flores",
+			lista: [
+				"rosas",
+				"tulipanes",
+				"diente de león"
+			]
+		},
+		{
+			tipo: "árboles",
+			lista: [
+				"obeto",
+				"pino",
+				"abedul"
+			]
+		}
+	]
+
+	console.log(misPlantas[0].lista[2]); //diente de leon
+	console.log(misPlantas[1].lista[1]); //pino
+
+//for
+	var miArreglo = [];
+
+	for (var i = 10; i >= 0 ; i--) {
+		miArreglo.push(i);
+	}
+
+	console.log(miArreglo);
+
+//while
+	var x;
+	x = 5;
+	while (x < 10) {
+		console.log(x);
+		x++;
+	}
+
+//do while
+	x=5;
+	do {
+		console.log(x);
+		x++;
+	} while (x < 10);      
+	//Ejercicio de contactos
+	var contactos = [
+		{
+			"nombre": "Dani",
+			"apellido": "Canasa",
+			"celular": "986886821",
+			"gustos": ["programación", "bailar"]
+		},
+		{
+			"nombre": "Bri",
+			"apellido": "Canasa",
+			"celular": "986886234",
+			"gustos": ["bailar"]
+		},
+		{
+			"nombre": "Salo",
+			"apellido": "Jimenez",
+			"celular": "123886821",
+			"gustos": ["violin", "voley"]
+		}
+	]
+	
+	function buscarPerfil(nombre, propiedad) {
+		for (var i = 0; i < contactos.length; i++) {
+			if (contactos[i].nombre === nombre)  {
+				return contactos[i][propiedad] || "La propiedad no existe"
+			}
+		}
+		return "No existe este contacto.";
+	}
+
+	console.log(buscarPerfil("Salo","celularo"));
+
+//números aleatorios entre 0 - 1
+	var numeroAleatorio = Math.random();
+
+	console.log(numeroAleatorio);
+
+//numero aleatorios enteros
+	var numeroAleatorioentre0y20 = Math.floor(Math.random() * 20 ); // entre 0 - 19
+	console.log(numeroAleatorioentre0y20);
+
+	function rangoAleatorio(limiteInfeerior, limiteSuperior) {
+		return Math.floor(Math.random() * (limiteSuperior - limiteInfeerior + 1)) + limiteInfeerior;
+	}
+
+	console.log(rangoAleatorio(3,20));
+
+//parseInt -  convertir una cadena de caracteres en un numero
+	console.log(parseInt("1"));  //1 entero
+	console.log(parseInt(6.7));  //6
+
+//parse int con base
+	console.log(parseInt("110111", 2)) ;  // 55 en sistema decimal
+	console.log(parseInt("3E0A", 16)) ;  //15882
+
+//Operador ternario | operador condicional
+	//condicion ? si es verdadero : si el falso
+	function minimo(x, y) {
+		return x < y ? x : y; 
+	}
+	console.log(minimo(4, 7));
+	console.log(minimo(8, 2));
+	console.log(minimo(5, 5));
+
+//multiples operadores condicionales o ternario
+	function compararNumeros(a, b) {
+		return a == b ? "a y b son iguales"
+			 : a >  b ? "a es mayor que b"
+			 : "b es mayor que a";
+	}
+	console.log(compararNumeros(15, 20));
+
+//VAR O LET
+//	var -> se puede declarar la variable más de una vez 
+// 	var -> es una variable global
+//	let -> no se puede volver a declarar una variable
+//	let -> solo existe en su ambito que fue creado
+//	const -> es una constante no se puede cambiar el valor;
+	const MI_CONSTANTE = 35; //usar mayuscula y subguiones por convencion
+//CONST
+	/** */
+	function calcularAreaCirculo(radio) {
+		if (radio < 0) {
+			return undefined;
+		}
+
+		const PI = 3.14;
+		return PI * (radio ** 2);
+	}
+
+	console.log(calcularAreaCirculo(-10));
+	
+//objetos inmutables
+	let colores = {
+		"verde": "#10e04b",
+		"azul": "1b50e0",
+		"negro": "#000000",
+		"blanco": "#ffffff"
+	}
+	Object.freeze(colores); 
+
+	colores.verde = "#345sg5"; //cannot assign to read only
+	delete colores.verde; //cannot delete property
+
+//funciones anonimas
+	const fecha = function () {
+		return new Date();
+	};
+
+//funciones Flecha
+	const fecha_ = () => new Date ();
+	// ejemplo
+	const sumarTres = function(x) {
+		return x + 3;
+	};
+	const sumarTres_ = (x) => x + 3;
+
+	console.log(sumarTres(4));
+	console.log(sumarTres_(4));
+	// ejemplo 
+	const concatenarArreglos = (arr1, arr2) => arr1.concat(arr2);
+	console.log(concatenarArreglos([1,2,3],[4,5,6]));
+	//cuando tenenos mas de una linea de codigo
+	const sumar =  (a, b ) => {
+		let num = 6;
+		return a + b + num;
+	}
+	console.log(sumar(5,2)); //13
+
+//valores por defecto
+	const incrementar = (num, valor = 1) => num + valor;
+	console.log(incrementar(5,3));
+
+//operador rest ... me crea una lista con los parametros
+	function miFuncion(...args) {
+		console.log(args.length);
+	}
+	miFuncion(1,"hola",25);
+
+//reduce - array  //hace la suma de los valores de la lista
+	const sumar_ = (...args) => args.reduce((a,b) => a + b, 0);
+	console.log(sumar_(1,2,3,4));
+
+//operador spread
+	const parametros = [1, 2 , "hola"];
+	function resta(x, y, z) {
+		console.log(x);
+		console.log(y);
+		console.log(z);	
+		return x - y;	
+	}
+	console.log(resta(...parametros));
+
+//desestructuración
+	const usuario = {
+		nombre: "Smith",
+		edad: 24
+	}
+	//antes
+	// const nombre = usuario nombre;
+	// const edad = usuario.edad;
+	//ahora
+	const {nombre, edad} = usuario;
+
+	console.log(nombre);
+	console.log(edad);
+
+//desestructracion de objetos anidados
+	 const usuario_ = {
+		 johnDoe: {
+			 edad: 27,
+			 correo: "JohnDoe@gmail.com"
+		 }
+	 };
+	 const {johnDoe: {edad: edadDelUsuario, correo: correoDelUsuario}} = usuario_;
+
+	 console.log(edadDelUsuario, correoDelUsuario);
+
+//desestructuracion de arreglos
+	 var a;
+	 var b;
+	 var c;
+
+	 [a, b, c] = [1, 2, 3];
+	 console.log(a, b, c);
+
+	 [a, b, , , c] = [1, 2, 3, 4, 5, 6];
+	 console.log(a, b, c);
+
+	 var x = 8;
+	 var y = 10;
+	 [x, y] = [y, x];
+	 console.log("x: " + x);
+	 console.log("y: " + y);
+
+//desestructuracion con el operador rest
+	 var a;
+	 var b;
+	 var arr;
+	 [a, b, ...arr] = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+	 console.log(a);
+	 console.log(b);
+	 console.log(arr);
+	//Ejemplo
+	const arregloInicial = [1, 2, 3, 4, 5, 6, 7, 8];
+	function removerTresPrimerosElementos(arreglo) {
+		const [ , , , ...nuevoArreglo] = arreglo;
+		return nuevoArreglo;
+	}
+	console.log(removerTresPrimerosElementos(arregloInicial));
+
+	var nuevoPerfilCliente = {
+		nombre: "Jane",
+		edad: 25,
+		nacionalidad: "colombiana",
+		ubicacion: "colombia"
+	}
+
+	const actualizarPerfil = ({nombre, edad, nacionalidad, ubicacion}) => {
+		console.log(nombre, edad, nacionalidad, ubicacion);
+	} 
+
+	actualizarPerfil(nuevoPerfilCliente);
+
+//plantillas Literales o Plantillas de cadenas  -> ` `
+	var nombreCliente = "Dani Canasa";
+	var edadCliente = 21;
+	console.log(`Mi nombre es ${nombreCliente} y tengo ${edadCliente} años.`);
+
+	var gustosClientes = ["pizza", "zanahoria", "chicha"];
+	console.log(`Mis gustos son ${JSON.stringify(gustosClientes)}`);
+
+	var persona = {
+		nombre: "Lucy",
+		profesion: "profesora",
+	};
+
+	const SALUDO = `Bienvenida ${persona.profesion} ${persona.nombre} !!!`
+	console.log(SALUDO);
+
+//Crear objetos de forma conscisa
+	var crearPersona = (nombre, edad, idioma) => {
+		return {
+			nombre: nombre,
+			edad: edad,
+			idioma: idioma
+		}
+	}
+	console.log(crearPersona("Gino Smith", 28, "español"));
+
+	var crearPersona = (nombre, edad, idioma) => ({nombre, edad, idioma});
+	console.log(crearPersona("Gino Smith", 28, "español"));
+
+//métodos
+	const usuarioNuevo = {
+		nombre: "Isabel",
+		//presentarse: function() {     antes
+		presentarse() {
+			return `Mi nombre es ${this.nombre}`;
+		}
+	}
+
+	console.log(usuarioNuevo.presentarse());
+
+//clase El estandar sugiere empezar con letra Mayuscula
+	class Mascota {
+		constructor(nombre, edad) {
+			this.nombre = nombre;
+			this.edad = edad;
+		}
+	}
+
+	var miMascota = new Mascota("Dinky", 6);
+	var tuMascota = new Mascota("Yako", 2);
+
+	console.log(miMascota.nombre);
+
+//Getters y Setters
+	class Libro {
+		constructor(autor) {
+			this._autor = autor;  //privada por convencion (no se debe modificar)
+		}
+
+		get autor() {      		  // nos permite obtener el valor
+			return this._autor;
+		}
+
+		set autor(nuevoAutor) {			  // nos permite actualizar el valor de una propiedad
+			this._autor = nuevoAutor;
+		} 			
+	}
+
+	var libroObj = new Libro("Anónimo");
+
+	console.log(libroObj.autor);				//GET
+
+	libroObj.autor = "Gino Smith";				//SET
+	console.log(libroObj.autor);
+
+//Es6  standar!
+</script>
