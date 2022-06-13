@@ -1,0 +1,27 @@
+<script>
+    var animals = ['cow', 'horse'];
+    animals.push('cat');
+    animals.push('dog', 'rat', 'horse');
+    console.log(animals.length);
+
+    //for
+    for (var i = 0; i < 5; i++) {
+        animals.push('cat');
+    }
+    console.log('add 5 cats with for');
+    console.log(animals);
+
+    //forEach
+    console.log('print with forEach');
+    animals.forEach(element => { console.log(element) });
+
+    //for/of loop
+    console.log('print for of loop')
+    for (let animal of animals) {
+        console.log(animal);
+    }
+
+    //map
+    console.log('print with map');
+    animals.map(element => console.log(element));
+</script>
